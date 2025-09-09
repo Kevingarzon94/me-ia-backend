@@ -39,7 +39,7 @@ jobs:
       
       - name: Deploy to Railway
         env:
-          SVC_ID: d025b17a-fe6a-4164-b796-6eadc20a8734
+          SVC_ID: a69af64c-2f3c-43ce-95bc-ad585ca47666
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           railway up --service=$SVC_ID
