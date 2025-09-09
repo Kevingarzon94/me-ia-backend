@@ -41,5 +41,4 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          railway link d025b17a-fe6a-4164-b796-6eadc20a8734
-          railway up --detach
+          railway deploy --project d025b17a-fe6a-4164-b796-6eadc20a8734 --detach
