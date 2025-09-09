@@ -1,0 +1,191 @@
+{
+  "faqs": [
+    {
+      "category": "experience",
+      "questions": [
+        {
+          "question": "How many years of experience do you have?",
+          "answer": "I have over 6 years of professional experience in full-stack development, working across multiple industries including retail, healthcare, and insurance. My journey includes 9 months as a junior developer, 5 years as a full-stack developer, and currently working as a front-end specialist.",
+          "keywords": ["experience", "years", "time", "background"],
+          "related_context": "Started in 2018, progressed from junior to team lead roles"
+        },
+        {
+          "question": "What industries have you worked in?",
+          "answer": "I've worked across diverse industries including technology consulting, healthcare, insurance, retail, and services sectors. This variety has given me the ability to quickly adapt to different business domains and understand various industry-specific requirements.",
+          "keywords": ["industries", "sectors", "domains", "business"]
+        },
+        {
+          "question": "Have you led teams or projects?",
+          "answer": "Yes, I've led a team of 3 developers at Babel Group, where I was responsible for conducting client sessions, gathering requirements, and ensuring successful project delivery. I also led the Center of Excellence team for application monitoring and improvement.",
+          "keywords": ["leadership", "team lead", "management", "coordination"]
+        },
+        {
+          "question": "What's your experience with client interaction?",
+          "answer": "I have extensive experience working directly with clients, conducting requirements gathering sessions, providing technical support, and aligning solutions with business needs. This has significantly improved project outcomes and client satisfaction.",
+          "keywords": ["client", "communication", "requirements", "stakeholder"]
+        }
+      ]
+    },
+    {
+      "category": "technical",
+      "questions": [
+        {
+          "question": "What's your preferred technology stack?",
+          "answer": "My preferred stack is React with TypeScript for frontend, Node.js with Express for backend, PostgreSQL or DynamoDB for databases, and AWS for cloud infrastructure. I'm comfortable with both SQL and NoSQL databases, and I emphasize clean architecture and SOLID principles in all my projects.",
+          "keywords": ["stack", "technologies", "preferred", "tech", "tools"]
+        },
+        {
+          "question": "What experience do you have with cloud services?",
+          "answer": "I have extensive hands-on experience with AWS services including Lambda for serverless functions, S3 for storage, CloudWatch for monitoring, and DynamoDB for NoSQL databases. I've also worked with Azure DevOps for CI/CD pipelines and have deployed applications on Vercel.",
+          "keywords": ["cloud", "AWS", "Azure", "serverless", "infrastructure"]
+        },
+        {
+          "question": "Do you have experience with microservices?",
+          "answer": "Yes, I've developed and maintained multiple microservices using AWS Lambda and Node.js. I successfully reduced errors by 50% through proper microservices implementation and established monitoring systems using CloudWatch for better observability.",
+          "keywords": ["microservices", "architecture", "lambda", "distributed"]
+        },
+        {
+          "question": "What's your experience with frontend frameworks?",
+          "answer": "I'm highly proficient in React with 6+ years of experience, including modern patterns like Hooks, Context API, and microfrontend architecture. I've also worked with React Native for mobile development and have experience with various UI libraries including Material-UI, PrimeReact, and Tailwind CSS.",
+          "keywords": ["frontend", "React", "UI", "frameworks", "JavaScript"]
+        },
+        {
+          "question": "How do you ensure code quality?",
+          "answer": "I follow SOLID principles and clean architecture patterns, implement comprehensive testing using Jest and React Testing Library, use TypeScript for type safety, conduct code reviews, and maintain CI/CD pipelines. I've reduced bugs by 30-50% in various projects through these practices.",
+          "keywords": ["quality", "testing", "best practices", "clean code", "standards"]
+        },
+        {
+          "question": "What databases have you worked with?",
+          "answer": "I have experience with both SQL and NoSQL databases including PostgreSQL, Oracle, SQL Server, MongoDB, and DynamoDB. I'm comfortable with database design, optimization, and have worked with ORMs like Sequelize and Mongoose.",
+          "keywords": ["database", "SQL", "NoSQL", "data", "storage"]
+        }
+      ]
+    },
+    {
+      "category": "projects",
+      "questions": [
+        {
+          "question": "What's your most impactful project?",
+          "answer": "Led the Center of Excellence, designing and implementing a strategy for handling bug reports and feature requests, reducing errors and significantly improving customer satisfaction",
+          "keywords": ["project", "impact", "achievement", "success", "notable"]
+        },
+        {
+          "question": "Tell me about a challenging problem you solved",
+          "answer": "I optimized a legacy inventory management system by implementing microfrontend architecture and modern state management, reducing the codebase size by 30% and improving development time by 20%. This required careful planning to maintain backward compatibility while modernizing the stack.",
+          "keywords": ["challenge", "problem", "solution", "difficult", "complex"]
+        },
+        {
+          "question": "Have you worked on real-time applications?",
+          "answer": "Yes, I've implemented real-time features using WebSockets for workforce tracking and inventory management systems. These applications handle real-time updates for hundreds of concurrent users with minimal latency.",
+          "keywords": ["real-time", "websockets", "live", "streaming", "instant"]
+        }
+      ]
+    },
+    {
+      "category": "soft_skills",
+      "questions": [
+        {
+          "question": "How do you handle tight deadlines?",
+          "answer": "I prioritize tasks based on business impact, maintain clear communication with stakeholders about progress and risks, and focus on delivering MVPs that can be iteratively improved. My track record shows consistent on-time delivery across multiple projects.",
+          "keywords": ["deadline", "pressure", "time management", "delivery", "stress"]
+        },
+        {
+          "question": "How do you approach learning new technologies?",
+          "answer": "I'm passionate about continuous learning. I stay updated through technical documentation, implement proof-of-concepts, and apply new technologies in side projects before introducing them to production. Recently, I've been exploring AI integration and improving my cloud architecture skills.",
+          "keywords": ["learning", "growth", "development", "skills", "improvement"]
+        },
+        {
+          "question": "How do you handle feedback or criticism?",
+          "answer": "I view feedback as an opportunity for growth. I actively seek code reviews, participate in retrospectives, and maintain open communication with team members. This approach has helped me continuously improve my technical and soft skills throughout my career.",
+          "keywords": ["feedback", "criticism", "growth mindset", "improvement"]
+        }
+      ]
+    },
+    {
+      "category": "availability",
+      "questions": [
+        {
+          "question": "What's your availability?",
+          "answer": "I'm immediately available for full-time opportunities. I prefer remote or hybrid positions but I'm flexible based on the project requirements. I'm comfortable working in different time zones and can adjust my schedule for team collaboration.",
+          "keywords": ["availability", "when", "start", "immediate", "schedule"]
+        },
+        {
+          "question": "Are you open to relocation?",
+          "answer": "I prefer remote work as it allows me to deliver my best performance, but I'm open to discussing relocation for exceptional opportunities, especially to tech hubs with strong developer communities.",
+          "keywords": ["relocation", "move", "remote", "onsite", "location"]
+        },
+        {
+          "question": "What's your preferred working arrangement?",
+          "answer": "I thrive in remote or hybrid environments where I can maintain deep focus for coding while also collaborating effectively with the team. I'm experienced with remote collaboration tools and asynchronous communication.",
+          "keywords": ["remote", "hybrid", "arrangement", "work style", "preference"]
+        }
+      ]
+    },
+    {
+      "category": "culture",
+      "questions": [
+        {
+          "question": "What type of company culture do you prefer?",
+          "answer": "I value companies that prioritize innovation, technical excellence, and continuous learning. I thrive in environments that encourage ownership, provide growth opportunities, and maintain a healthy work-life balance. Open communication and collaborative problem-solving are essential to me.",
+          "keywords": ["culture", "environment", "values", "team", "workplace"]
+        },
+        {
+          "question": "How do you prefer to work with teams?",
+          "answer": "I believe in collaborative development with clear communication. I enjoy participating in code reviews, pair programming sessions, and knowledge sharing. Having led teams, I understand the importance of mentorship and creating an environment where everyone can contribute and grow.",
+          "keywords": ["teamwork", "collaboration", "communication", "team dynamics"]
+        }
+      ]
+    },
+    {
+      "category": "goals",
+      "questions": [
+        {
+          "question": "What are your career goals?",
+          "answer": "I'm focused on deepening my expertise in cloud architecture and AI integration while continuing to deliver high-impact solutions. My goal is to work on products that make a real difference to users, potentially moving into a technical architect or engineering manager role where I can mentor others and shape technical strategy.",
+          "keywords": ["goals", "future", "career", "aspirations", "growth"]
+        },
+        {
+          "question": "What type of projects interest you most?",
+          "answer": "I'm passionate about projects that combine technical challenges with real user impact. I'm particularly interested in scalable applications, AI integration, performance optimization, and anything involving modern cloud architecture. Open source contribution is also something I want to expand.",
+          "keywords": ["interests", "projects", "passion", "motivation", "preferences"]
+        }
+      ]
+    },
+    {
+      "category": "compensation",
+      "questions": [
+        {
+          "question": "What are your salary expectations?",
+          "answer": "I'm looking for compensation that reflects my 6+ years of experience and the value I bring as a mid-senior developer who can lead teams and deliver complex projects. I'm open to discussing specific numbers based on the total compensation package, including benefits, growth opportunities, and work flexibility.",
+          "keywords": ["salary", "compensation", "pay", "money", "expectations", "rate"]
+        }
+      ]
+    },
+    {
+      "category": "specific_skills",
+      "questions": [
+        {
+          "question": "What's your English level?",
+          "answer": "I have A2 (elementary) English level. While I can read technical documentation and communicate in writing effectively, I'm actively working on improving my conversational skills. I'm comfortable working in international teams using written communication and can participate in technical discussions.",
+          "keywords": ["English", "language", "communication", "international"]
+        },
+        {
+          "question": "Do you have experience with Agile/Scrum?",
+          "answer": "Yes, I have 6+ years working in Agile environments using Scrum methodology. I've participated in all ceremonies including sprint planning, daily standups, retrospectives, and demos. I've also led sprint planning sessions and helped teams improve their Agile practices.",
+          "keywords": ["agile", "scrum", "methodology", "sprint", "ceremonies"]
+        },
+        {
+          "question": "Have you worked with CI/CD pipelines?",
+          "answer": "Yes, I've implemented and maintained CI/CD pipelines using Jenkins and Azure DevOps. I reduced deployment time from 2 hours to 15 minutes in one project and have experience with automated testing, code quality checks, and continuous deployment strategies.",
+          "keywords": ["CI/CD", "DevOps", "deployment", "automation", "pipeline"]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "total_questions": 30,
+    "categories": 9,
+    "last_update": "2025-01",
+    "language": "en"
+  }
+}

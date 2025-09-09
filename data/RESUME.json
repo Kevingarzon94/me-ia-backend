@@ -1,0 +1,293 @@
+{
+  "basics": {
+    "name": "Kevin Garzon Rodriguez",
+    "label": "Full-Stack Developer",
+    "email": "kevingarzon4@gmail.com",
+    "phone": "(+57) 3166245831",
+    "url": "https://kevingarzon.dev",
+    "location": "Bogotá, Colombia",
+    "linkedin": "https://linkedin.com/in/kevin-garzon-rodriguez-877921137/",
+    "github": "https://github.com/kevingarzon",
+    "summary": "Full-Stack Developer with 6+ years of experience building scalable web applications and microservices. Specialized in React, Node.js, and AWS cloud architecture. Proven track record of leading teams, optimizing performance, and delivering high-quality solutions for retail, healthcare, and insurance industries.",
+    "availability": "Immediate",
+    "preferred_mode": "Remote/Hybrid",
+    "years_of_experience": 6
+  },
+  "work": [
+    {
+      "company_name": "Babel Group",
+      "position": "Front-End Developer",
+      "start_date": "November 2024",
+      "end_date": "May 2025",
+      "duration_months": 6,
+      "industry": "Technology Consulting",
+      "summary": "Analysis, design, development, and implementation of client requirements, focused on building scalable solutions and maintaining clean code. Applied SOLID principles, Clean Architecture, and Scrum methodology while implementing modern technologies and best practices using a microfrontend architecture and continuous deployments to develop an inventory management application.",
+      "achievements": [
+        "Developed inventory management modules using clean code principles and microfrontend architecture, reducing development time by 20%",
+        "Implemented state management with Hooks and Context API for independent modules, optimizing codebase and reducing size by 30%",
+        "Established TypeScript best practices and modern technology adoption, enhancing project maintainability",
+        "Implemented CI/CD processes with code review practices, improving software quality and accelerating delivery cycles by 25%"
+      ],
+      "technology": [
+        "React",
+        "TypeScript",
+        "Azure DevOps",
+        "PrimeReact",
+        "Storybook",
+        "Chart.js",
+        "Turborepo",
+        "SQL Server",
+        "React Hook Form",
+        "REST API",
+        "React Query"
+      ],
+      "key_projects": [
+        {
+          "name": "Inventory Management System",
+          "description": "Enterprise-level inventory tracking solution with real-time updates",
+          "impact": "Optimized internal processes for 500+ users"
+        }
+      ]
+    },
+    {
+      "company_name": "Amaris Consulting",
+      "position": "Full-Stack Developer",
+      "start_date": "June 2019",
+      "end_date": "June 2024",
+      "duration_months": 60,
+      "industry": "Multi-industry (Retail, Healthcare, Insurance)",
+      "summary": "Led application development, requirements analysis, and continuous improvement across multiple client projects. Managed a team of 3 developers, conducted client sessions for requirements gathering, and implemented solutions using Scrum methodology, CI/CD with Jenkins, and AWS Lambda microservices architecture.",
+      "achievements": [
+        "Developed and maintained critical microservices, achieving 50% reduction in reported errors",
+        "Led Center of Excellence team monitoring production applications, improving bug resolution efficiency by 40%",
+        "Implemented CloudWatch-based error management system, enhancing observability and reducing MTTR",
+        "Successfully migrated legacy applications to React, improving performance and user experience",
+        "Gained expertise in AWS ecosystem (Lambda, S3, CloudWatch, DynamoDB) through hands-on implementation",
+        "Improved client satisfaction through direct requirements gathering and solution alignment"
+      ],
+      "technology": [
+        "React",
+        "TypeScript",
+        "AWS Lambda",
+        "Material-UI",
+        "AWS S3",
+        "DynamoDB",
+        "Node.js",
+        "Express",
+        "PHP",
+        "REST API",
+        "CloudWatch",
+        "Jenkins"
+      ],
+      "key_projects": [
+        {
+          "name": "Healthcare Management Platform",
+          "description": "Multi-tenant SaaS platform for healthcare providers",
+          "impact": "Served 10,000+ daily active users"
+        },
+        {
+          "name": "Insurance Processing System",
+          "description": "Automated processing",
+          "impact": "Reduced processing time by 60%"
+        }
+      ]
+    },
+    {
+      "company_name": "Accion Plus",
+      "position": "Full-Stack Developer",
+      "start_date": "August 2018",
+      "end_date": "May 2019",
+      "duration_months": 9,
+      "industry": "Services",
+      "summary": "Developed internal workforce tracking application for schedule and service point management. Collaborated with various departments to ensure solutions aligned with business needs while applying development best practices.",
+      "achievements": [
+        "Implemented performance metrics dashboard, improving data visualization and decision-making by 20%",
+        "Optimized backend services, reducing API response times by 10%",
+        "Enhanced UI/UX for activity logging, reducing user-reported issues by 10%",
+        "Delivered mobile application using React Native for field employees"
+      ],
+      "technology": [
+        "React",
+        "JavaScript",
+        "Oracle DB",
+        "React Native",
+        "REST API"
+      ],
+      "key_projects": [
+        {
+          "name": "Workforce Management System",
+          "description": "Real-time tracking and scheduling for 200+ employees",
+          "impact": "Increased operational efficiency by 25%"
+        }
+      ]
+    }
+  ],
+  "education": {
+    "institution": "Fundación Universitaria Compensar",
+    "url": "https://ucompensar.edu.co/",
+    "area": "Systems Engineering",
+    "studyType": "Bachelor's Degree",
+    "startDate": "January 2011",
+    "endDate": "January 2019",
+    "gpa": null,
+    "courses": [
+      "Database Management (SQL)",
+      "Programming Logic and Algorithms",
+      "Web Development"
+    ]
+  },
+  "skills": {
+    "languages": {
+      "expert": [
+        "JavaScript"
+      ],
+      "advanced": [
+        "TypeScript",
+        "PHP",
+        "SQL"
+      ],
+      "intermediate": [
+        "NoSQL"
+      ],
+      "basic": [
+        "Go",
+        "Python"
+      ]
+    },
+    "frontend": {
+      "frameworks": [
+        "React",
+        "React Native"
+      ],
+      "styling": [
+        "Tailwind CSS",
+        "PrimeReact",
+        "Material-UI",
+        "Bootstrap",
+        "CSS3"
+      ],
+      "state_management": [
+        "Context API",
+        "Zustand",
+        "React Hook Form",
+        "React Query"
+      ],
+      "testing": [
+        "Jest",
+        "React Testing Library"
+      ],
+      "tools": [
+        "Storybook",
+        "Webpack",
+        "Vite",
+        "Turborepo"
+      ]
+    },
+    "backend": {
+      "frameworks": [
+        "Node.js",
+        "Express",
+        "AWS Lambda"
+      ],
+      "databases": [
+        "PostgreSQL",
+        "MongoDB",
+        "Oracle",
+        "DynamoDB",
+        "SQL Server"
+      ],
+      "apis": [
+        "REST",
+        "GraphQL",
+        "WebSockets"
+      ],
+      "orm": [
+        "Sequelize",
+        "Mongoose"
+      ]
+    },
+    "devops": {
+      "cloud": [
+        "AWS (Lambda, S3, CloudWatch, DynamoDB)",
+        "Azure",
+        "Vercel"
+      ],
+      "ci_cd": [
+        "Jenkins",
+        "Azure DevOps",
+        "GitHub Actions"
+      ],
+      "containers": [
+        "Docker"
+      ],
+      "monitoring": [
+        "CloudWatch",
+        "Application Insights"
+      ],
+      "version_control": [
+        "Git",
+        "GitHub",
+        "GitLab"
+      ]
+    },
+    "methodologies": [
+      "Scrum",
+      "Agile",
+      "Clean Architecture",
+      "SOLID Principles",
+      "TDD"
+    ],
+    "soft_skills": [
+      "Team Leadership",
+      "Cross-functional Collaboration",
+      "Client Communication",
+      "Technical Mentorship",
+      "Problem Solving",
+      "Requirements Analysis"
+    ]
+  },
+  "languages": [
+    {
+      "language": "Spanish",
+      "level": "Native",
+      "certification": null
+    },
+    {
+      "language": "English",
+      "level": "A2 (Elementary)",
+      "certification": null,
+      "note": "Currently improving through technical documentation and international collaboration"
+    }
+  ],
+  "professional_interests": [
+    "Artificial Intelligence & Machine Learning",
+    "Cloud Architecture & Serverless",
+    "Open Source Contribution",
+    "Performance Optimization",
+    "Developer Experience (DX)"
+  ],
+  "ideal_company_values": [
+    "Innovation and technical excellence",
+    "Remote-first culture",
+    "Continuous learning opportunities",
+    "Impact-driven development",
+    "Work-life balance"
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_update": "January 2025",
+    "keywords": [
+      "full stack developer",
+      "react developer",
+      "node.js",
+      "javascript",
+      "typescript",
+      "aws",
+      "microservices",
+      "clean architecture",
+      "team lead",
+      "agile",
+      "scrum"
+    ]
+  }
+}
