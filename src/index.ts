@@ -14,5 +14,5 @@ app.use(express.json())
 app.use(userChatRouter)
 
 app.listen(PORT, ()=>{
-    console.log(`Server is running on port ${PORT}`)
+    console.log(`Server is running on port: ${PORT}`)
 })
