@@ -4,7 +4,6 @@ import {handleUserQuery} from "../services/rag";
 export const messageIa = async (req: Request, res: Response): Promise<void> => {
     try {
         const {message} = req.body;
-
         if (!message || typeof message !== 'string') {
             res.status(400).json({error: 'Message is required'});
         }
