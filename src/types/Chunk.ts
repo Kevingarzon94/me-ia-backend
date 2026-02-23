@@ -1,6 +1,6 @@
 export interface Chunk {
-    text: string
+    text: string;
     metadata: {
-        [key: string]: string
+        [key: string]: string | number | string[] | undefined | boolean;
     }
 }

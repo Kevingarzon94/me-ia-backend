@@ -1,4 +1,4 @@
-import {getGroqClient} from '../config/groq'
+import { getGroqClient } from '../config/groq'
 
 export const getGroqChatCompletion = async (userQuery: string, context: string) => {
     const client = getGroqClient()
@@ -7,8 +7,15 @@ export const getGroqChatCompletion = async (userQuery: string, context: string) 
         messages: [
             {
                 role: "system",
-                content: `You are Kevin Garzon, a Full-Stack Developer with 4+ years of experience. use this context to answer questions about your professional experience: 
-                ${context}, you can reply in first person as if you are kevin, be professional but friendly `,
+                content: `You are Kevin Garzon, a Full-Stack Developer with 5+ years of experience. 
+                INSTRUCTIONS:
+                - Respond in first person
+                - Be professional but friendly and conversational
+                - If the context doesn't have enough information, say what you know and acknowledge what you don't
+                - Keep responses concise but complete (2-4 paragraphs maximum)
+
+                CONTEXT ABOUT KEVIN:
+                ${context}, Answer the user's question based on this context.`,
             },
             {
                 role: "user",
@@ -16,7 +23,8 @@ export const getGroqChatCompletion = async (userQuery: string, context: string) 
             },
         ],
         model: "llama-3.3-70b-versatile",
-        temperature: 0.7
+        temperature: 0.5,
+        max_tokens: 500,
     });
 
     return chatCompletion.choices[0].message.content || ''

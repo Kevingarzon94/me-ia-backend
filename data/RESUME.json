@@ -5,13 +5,20 @@
     "email": "kevingarzon4@gmail.com",
     "phone": "(+57) 3166245831",
     "url": "https://kevingarzon.dev",
-    "location": "Bogotá, Colombia",
-    "linkedin": "https://linkedin.com/in/kevin-garzon-rodriguez-877921137/",
-    "github": "https://github.com/kevingarzon",
+    "location": {
+      "city": "Bogotá",
+      "country": "Colombia",
+      "countryCode": "CO"
+    },
+    "profiles": {
+      "linkedin": "https://linkedin.com/in/kevin-garzon-rodriguez-877921137/",
+      "github": "https://github.com/kevingarzon"
+    },
     "summary": "Full-Stack Developer with 6+ years of experience building scalable web applications and microservices. Specialized in React, Node.js, and AWS cloud architecture. Proven track record of leading teams, optimizing performance, and delivering high-quality solutions for retail, healthcare, and insurance industries.",
     "availability": "Immediate",
     "preferred_mode": "Remote/Hybrid",
-    "years_of_experience": 6
+    "years_of_experience": 6,
+    "career_level": "Mid-Senior"
   },
   "work": [
     {
@@ -21,12 +28,92 @@
       "end_date": "May 2025",
       "duration_months": 6,
       "industry": "Technology Consulting",
+      "location": "Remote",
+      "employment_type": "Full-time",
       "summary": "Analysis, design, development, and implementation of client requirements, focused on building scalable solutions and maintaining clean code. Applied SOLID principles, Clean Architecture, and Scrum methodology while implementing modern technologies and best practices using a microfrontend architecture and continuous deployments to develop an inventory management application.",
       "achievements": [
-        "Developed inventory management modules using clean code principles and microfrontend architecture, reducing development time by 20%",
-        "Implemented state management with Hooks and Context API for independent modules, optimizing codebase and reducing size by 30%",
-        "Established TypeScript best practices and modern technology adoption, enhancing project maintainability",
-        "Implemented CI/CD processes with code review practices, improving software quality and accelerating delivery cycles by 25%"
+        {
+          "id": "babel_ach_001",
+          "title": "Inventory Management Module Development",
+          "description": "Developed comprehensive inventory management modules using clean code principles and microfrontend architecture",
+          "impact": "Reduced development time by 20%",
+          "technologies": [
+            "React",
+            "TypeScript",
+            "Microfrontend",
+            "Clean Architecture",
+            "SOLID Principles"
+          ],
+          "metrics": {
+            "type": "efficiency",
+            "improvement_percentage": 20,
+            "measure": "development time"
+          },
+          "skills_demonstrated": [
+            "Architecture Design",
+            "Clean Code",
+            "Modular Development",
+            "Performance Optimization"
+          ]
+        },
+        {
+          "id": "babel_ach_002",
+          "title": "State Management Optimization",
+          "description": "Implemented state management with Hooks and Context API for independent modules, creating a modular and maintainable architecture",
+          "impact": "Optimized codebase and reduced size by 30%",
+          "technologies": [
+            "React Hooks",
+            "Context API",
+            "State Management"
+          ],
+          "metrics": {
+            "type": "code_quality",
+            "improvement_percentage": 30,
+            "measure": "codebase size reduction"
+          },
+          "skills_demonstrated": [
+            "State Management",
+            "Code Optimization",
+            "React Patterns"
+          ]
+        },
+        {
+          "id": "babel_ach_003",
+          "title": "TypeScript Best Practices Implementation",
+          "description": "Established TypeScript best practices and modern technology adoption across the project",
+          "impact": "Enhanced project maintainability and reduced type-related bugs",
+          "technologies": [
+            "TypeScript",
+            "ESLint",
+            "Type Safety"
+          ],
+          "skills_demonstrated": [
+            "Code Standards",
+            "Type Safety",
+            "Best Practices"
+          ]
+        },
+        {
+          "id": "babel_ach_004",
+          "title": "CI/CD Process Implementation",
+          "description": "Implemented CI/CD processes with code review practices and automated testing",
+          "impact": "Improved software quality and accelerated delivery cycles by 25%",
+          "technologies": [
+            "Azure DevOps",
+            "CI/CD",
+            "Automated Testing"
+          ],
+          "metrics": {
+            "type": "delivery_speed",
+            "improvement_percentage": 25,
+            "measure": "delivery cycles"
+          },
+          "skills_demonstrated": [
+            "DevOps",
+            "Automation",
+            "Quality Assurance"
+          ]
+        }
       ],
       "technology": [
         "React",
@@ -44,9 +131,34 @@
       "key_projects": [
         {
           "name": "Inventory Management System",
-          "description": "Enterprise-level inventory tracking solution with real-time updates",
-          "impact": "Optimized internal processes for 500+ users"
+          "description": "Enterprise-level inventory tracking solution with real-time updates and advanced reporting capabilities",
+          "impact": "Optimized internal processes for 500+ users",
+          "role": "Lead Frontend Developer",
+          "technologies": [
+            "React",
+            "TypeScript",
+            "Microfrontend",
+            "PrimeReact",
+            "Chart.js"
+          ],
+          "challenges": [
+            "Migrating from monolithic to microfrontend architecture",
+            "Maintaining backward compatibility",
+            "Implementing real-time data synchronization"
+          ],
+          "outcomes": [
+            "20% faster development cycles",
+            "30% smaller codebase",
+            "Improved user satisfaction"
+          ]
         }
+      ],
+      "responsibilities": [
+        "Led frontend development using microfrontend architecture",
+        "Conducted code reviews and mentored junior developers",
+        "Collaborated with backend team on API design",
+        "Implemented CI/CD pipelines and automated testing",
+        "Participated in client meetings and requirement gathering"
       ]
     },
     {
@@ -56,14 +168,120 @@
       "end_date": "June 2024",
       "duration_months": 60,
       "industry": "Multi-industry (Retail, Healthcare, Insurance)",
+      "location": "Bogotá, Colombia",
+      "employment_type": "Full-time",
       "summary": "Led application development, requirements analysis, and continuous improvement across multiple client projects. Managed a team of 3 developers, conducted client sessions for requirements gathering, and implemented solutions using Scrum methodology, CI/CD with Jenkins, and AWS Lambda microservices architecture.",
       "achievements": [
-        "Developed and maintained critical microservices, achieving 50% reduction in reported errors",
-        "Led Center of Excellence team monitoring production applications, improving bug resolution efficiency by 40%",
-        "Implemented CloudWatch-based error management system, enhancing observability and reducing MTTR",
-        "Successfully migrated legacy applications to React, improving performance and user experience",
-        "Gained expertise in AWS ecosystem (Lambda, S3, CloudWatch, DynamoDB) through hands-on implementation",
-        "Improved client satisfaction through direct requirements gathering and solution alignment"
+        {
+          "id": "amaris_ach_001",
+          "title": "Microservices Development and Error Reduction",
+          "description": "Developed and maintained critical microservices using AWS Lambda and Node.js with comprehensive error handling and monitoring",
+          "impact": "Achieved 50% reduction in reported errors",
+          "technologies": [
+            "AWS Lambda",
+            "Node.js",
+            "CloudWatch",
+            "DynamoDB"
+          ],
+          "metrics": {
+            "type": "quality",
+            "improvement_percentage": 50,
+            "measure": "error reduction"
+          },
+          "skills_demonstrated": [
+            "Microservices Architecture",
+            "Error Handling",
+            "AWS Services",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "amaris_ach_002",
+          "title": "Center of Excellence Leadership",
+          "description": "Led Center of Excellence team monitoring production applications and implementing bug resolution strategies",
+          "impact": "Improved bug resolution efficiency by 40%",
+          "technologies": [
+            "CloudWatch",
+            "Monitoring Tools",
+            "Incident Management"
+          ],
+          "metrics": {
+            "type": "efficiency",
+            "improvement_percentage": 40,
+            "measure": "bug resolution time"
+          },
+          "skills_demonstrated": [
+            "Team Leadership",
+            "Incident Management",
+            "Process Improvement",
+            "Monitoring"
+          ]
+        },
+        {
+          "id": "amaris_ach_003",
+          "title": "CloudWatch Error Management System",
+          "description": "Implemented comprehensive CloudWatch-based error management and alerting system",
+          "impact": "Enhanced observability and reduced Mean Time To Resolution (MTTR)",
+          "technologies": [
+            "AWS CloudWatch",
+            "CloudWatch Alarms",
+            "SNS",
+            "Lambda"
+          ],
+          "skills_demonstrated": [
+            "Observability",
+            "Monitoring",
+            "Alerting",
+            "DevOps"
+          ]
+        },
+        {
+          "id": "amaris_ach_004",
+          "title": "Legacy Application Migration",
+          "description": "Successfully migrated multiple legacy applications to React with modern patterns and improved architecture",
+          "impact": "Improved performance and user experience significantly",
+          "technologies": [
+            "React",
+            "JavaScript",
+            "Modern Web APIs"
+          ],
+          "skills_demonstrated": [
+            "Migration Strategy",
+            "Legacy Code",
+            "Modern Patterns",
+            "Performance Optimization"
+          ]
+        },
+        {
+          "id": "amaris_ach_005",
+          "title": "AWS Ecosystem Expertise",
+          "description": "Gained extensive hands-on experience implementing solutions across AWS ecosystem",
+          "impact": "Enabled serverless architecture adoption and cost optimization",
+          "technologies": [
+            "AWS Lambda",
+            "S3",
+            "CloudWatch",
+            "DynamoDB",
+            "API Gateway"
+          ],
+          "skills_demonstrated": [
+            "Cloud Architecture",
+            "Serverless",
+            "AWS Services",
+            "Cost Optimization"
+          ]
+        },
+        {
+          "id": "amaris_ach_006",
+          "title": "Client Satisfaction Improvement",
+          "description": "Improved client satisfaction through direct requirements gathering and solution alignment",
+          "impact": "Increased client retention and positive feedback",
+          "skills_demonstrated": [
+            "Client Communication",
+            "Requirements Analysis",
+            "Stakeholder Management"
+          ]
+        }
       ],
       "technology": [
         "React",
@@ -82,15 +300,94 @@
       "key_projects": [
         {
           "name": "Healthcare Management Platform",
-          "description": "Multi-tenant SaaS platform for healthcare providers",
-          "impact": "Served 10,000+ daily active users"
+          "description": "Multi-tenant SaaS platform for healthcare providers with patient management, scheduling, and billing features",
+          "impact": "Served 10,000+ daily active users",
+          "role": "Full-Stack Developer & Team Lead",
+          "technologies": [
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "AWS Lambda",
+            "Material-UI"
+          ],
+          "challenges": [
+            "Multi-tenancy architecture",
+            "HIPAA compliance",
+            "High availability requirements",
+            "Complex scheduling algorithms"
+          ],
+          "outcomes": [
+            "10,000+ daily active users",
+            "99.9% uptime",
+            "Positive user feedback",
+            "Successful multi-client deployment"
+          ]
         },
         {
           "name": "Insurance Processing System",
-          "description": "Automated processing",
-          "impact": "Reduced processing time by 60%"
+          "description": "Automated insurance claim processing system with document management and workflow automation",
+          "impact": "Reduced processing time by 60%",
+          "role": "Full-Stack Developer",
+          "technologies": [
+            "React",
+            "Node.js",
+            "AWS Lambda",
+            "S3",
+            "DynamoDB"
+          ],
+          "challenges": [
+            "Document processing automation",
+            "Complex business rules",
+            "Integration with legacy systems"
+          ],
+          "outcomes": [
+            "60% faster processing time",
+            "Reduced manual errors",
+            "Improved customer satisfaction"
+          ]
+        },
+        {
+          "name": "Retail Management Suite",
+          "description": "Comprehensive retail management system with inventory, sales, and analytics modules",
+          "impact": "Streamlined operations for multiple retail locations",
+          "role": "Full-Stack Developer",
+          "technologies": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "MongoDB"
+          ],
+          "challenges": [
+            "Real-time inventory sync",
+            "Multi-location management",
+            "Performance at scale"
+          ],
+          "outcomes": [
+            "Unified multi-location platform",
+            "Real-time data synchronization",
+            "Improved operational efficiency"
+          ]
         }
-      ]
+      ],
+      "responsibilities": [
+        "Led team of 3 developers in project delivery",
+        "Conducted requirements gathering sessions with clients",
+        "Designed and implemented microservices architecture",
+        "Maintained CI/CD pipelines with Jenkins",
+        "Performed code reviews and technical mentorship",
+        "Managed production deployments and monitoring",
+        "Coordinated with cross-functional teams"
+      ],
+      "team_leadership": {
+        "team_size": 3,
+        "role": "Technical Lead",
+        "responsibilities": [
+          "Sprint planning and task assignment",
+          "Technical mentorship",
+          "Code review coordination",
+          "Client communication"
+        ]
+      }
     },
     {
       "company_name": "Accion Plus",
@@ -99,26 +396,130 @@
       "end_date": "May 2019",
       "duration_months": 9,
       "industry": "Services",
+      "location": "Bogotá, Colombia",
+      "employment_type": "Full-time",
       "summary": "Developed internal workforce tracking application for schedule and service point management. Collaborated with various departments to ensure solutions aligned with business needs while applying development best practices.",
       "achievements": [
-        "Implemented performance metrics dashboard, improving data visualization and decision-making by 20%",
-        "Optimized backend services, reducing API response times by 10%",
-        "Enhanced UI/UX for activity logging, reducing user-reported issues by 10%",
-        "Delivered mobile application using React Native for field employees"
+        {
+          "id": "accion_ach_001",
+          "title": "Performance Metrics Dashboard",
+          "description": "Implemented comprehensive performance metrics dashboard with real-time data visualization",
+          "impact": "Improved data visualization and decision-making by 20%",
+          "technologies": [
+            "React",
+            "Chart Libraries",
+            "REST API"
+          ],
+          "metrics": {
+            "type": "business_impact",
+            "improvement_percentage": 20,
+            "measure": "decision-making efficiency"
+          },
+          "skills_demonstrated": [
+            "Data Visualization",
+            "Dashboard Design",
+            "Business Intelligence"
+          ]
+        },
+        {
+          "id": "accion_ach_002",
+          "title": "Backend Service Optimization",
+          "description": "Optimized backend services through query optimization and caching strategies",
+          "impact": "Reduced API response times by 10%",
+          "technologies": [
+            "Node.js",
+            "Oracle DB",
+            "Caching"
+          ],
+          "metrics": {
+            "type": "performance",
+            "improvement_percentage": 10,
+            "measure": "API response time"
+          },
+          "skills_demonstrated": [
+            "Performance Optimization",
+            "Database Optimization",
+            "Caching Strategies"
+          ]
+        },
+        {
+          "id": "accion_ach_003",
+          "title": "UI/UX Enhancement",
+          "description": "Enhanced UI/UX for activity logging with improved workflows and user feedback",
+          "impact": "Reduced user-reported issues by 10%",
+          "technologies": [
+            "React",
+            "UX Design",
+            "User Testing"
+          ],
+          "metrics": {
+            "type": "user_satisfaction",
+            "improvement_percentage": 10,
+            "measure": "user-reported issues"
+          },
+          "skills_demonstrated": [
+            "UI/UX Design",
+            "User Experience",
+            "Problem Solving"
+          ]
+        },
+        {
+          "id": "accion_ach_004",
+          "title": "Mobile Application Development",
+          "description": "Delivered mobile application using React Native for field employees",
+          "impact": "Enabled mobile workforce tracking for 200+ field employees",
+          "technologies": [
+            "React Native",
+            "Mobile Development"
+          ],
+          "skills_demonstrated": [
+            "Mobile Development",
+            "Cross-platform Development",
+            "React Native"
+          ]
+        }
       ],
       "technology": [
         "React",
         "JavaScript",
         "Oracle DB",
         "React Native",
-        "REST API"
+        "REST API",
+        "Node.js"
       ],
       "key_projects": [
         {
           "name": "Workforce Management System",
-          "description": "Real-time tracking and scheduling for 200+ employees",
-          "impact": "Increased operational efficiency by 25%"
+          "description": "Real-time tracking and scheduling system for 200+ employees with geolocation and activity logging",
+          "impact": "Increased operational efficiency by 25%",
+          "role": "Full-Stack Developer",
+          "technologies": [
+            "React",
+            "React Native",
+            "Node.js",
+            "Oracle DB",
+            "WebSockets"
+          ],
+          "challenges": [
+            "Real-time location tracking",
+            "Offline functionality",
+            "Data synchronization",
+            "Battery optimization"
+          ],
+          "outcomes": [
+            "200+ employees tracked in real-time",
+            "25% operational efficiency increase",
+            "Reduced scheduling conflicts",
+            "Improved time tracking accuracy"
+          ]
         }
+      ],
+      "responsibilities": [
+        "Developed workforce tracking application",
+        "Collaborated with HR and Operations departments",
+        "Implemented real-time features with WebSockets",
+        "Built mobile application with React Native",
+        "Optimized database queries and API performance"
       ]
     }
   ],
@@ -129,153 +530,488 @@
     "studyType": "Bachelor's Degree",
     "startDate": "January 2011",
     "endDate": "January 2019",
+    "duration_years": 8,
+    "location": "Bogotá, Colombia",
     "gpa": null,
     "courses": [
       "Database Management (SQL)",
       "Programming Logic and Algorithms",
-      "Web Development"
+      "Web Development",
+      "Software Engineering",
+      "Data Structures",
+      "Object-Oriented Programming"
+    ],
+    "relevant_projects": [
+      "Final project: Web-based inventory management system",
+      "Database design for e-commerce platform",
+      "Mobile app development with hybrid technologies"
     ]
   },
   "skills": {
     "languages": {
-      "expert": [
-        "JavaScript"
-      ],
-      "advanced": [
-        "TypeScript",
-        "PHP",
-        "SQL"
-      ],
-      "intermediate": [
-        "NoSQL"
-      ],
-      "basic": [
-        "Go",
-        "Python"
-      ]
+      "expert": {
+        "list": [
+          "JavaScript"
+        ],
+        "years_of_experience": 6,
+        "proficiency_level": "Expert"
+      },
+      "advanced": {
+        "list": [
+          "TypeScript",
+          "PHP",
+          "SQL"
+        ],
+        "years_of_experience": 4,
+        "proficiency_level": "Advanced"
+      },
+      "intermediate": {
+        "list": [
+          "NoSQL"
+        ],
+        "years_of_experience": 3,
+        "proficiency_level": "Intermediate"
+      },
+      "basic": {
+        "list": [
+          "Go",
+          "Python"
+        ],
+        "years_of_experience": 1,
+        "proficiency_level": "Basic"
+      }
     },
     "frontend": {
       "frameworks": [
-        "React",
-        "React Native"
+        {
+          "name": "React",
+          "proficiency": "Expert",
+          "years": 6,
+          "specific_skills": [
+            "Hooks",
+            "Context API",
+            "Performance Optimization",
+            "Microfrontend Architecture",
+            "Server Components"
+          ]
+        },
+        {
+          "name": "React Native",
+          "proficiency": "Intermediate",
+          "years": 2,
+          "specific_skills": [
+            "Cross-platform Development",
+            "Native Modules",
+            "Performance Optimization"
+          ]
+        }
       ],
       "styling": [
         "Tailwind CSS",
         "PrimeReact",
         "Material-UI",
         "Bootstrap",
-        "CSS3"
+        "CSS3",
+        "SASS",
+        "Styled Components",
+        "CSS Modules"
       ],
       "state_management": [
         "Context API",
         "Zustand",
         "React Hook Form",
-        "React Query"
+        "React Query",
+        "Redux (basic)"
       ],
       "testing": [
         "Jest",
-        "React Testing Library"
+        "React Testing Library",
+        "Unit Testing",
+        "Integration Testing"
       ],
       "tools": [
         "Storybook",
         "Webpack",
         "Vite",
-        "Turborepo"
+        "Turborepo",
+        "ESLint",
+        "Prettier",
+        "Chrome DevTools"
       ]
     },
     "backend": {
       "frameworks": [
-        "Node.js",
-        "Express",
-        "AWS Lambda"
+        {
+          "name": "Node.js",
+          "proficiency": "Advanced",
+          "years": 5,
+          "specific_skills": [
+            "Express",
+            "RESTful APIs",
+            "Microservices",
+            "Event-driven Architecture"
+          ]
+        },
+        {
+          "name": "AWS Lambda",
+          "proficiency": "Advanced",
+          "years": 4,
+          "specific_skills": [
+            "Serverless Architecture",
+            "Event Processing",
+            "API Gateway Integration"
+          ]
+        }
       ],
       "databases": [
-        "PostgreSQL",
-        "MongoDB",
-        "Oracle",
-        "DynamoDB",
-        "SQL Server"
+        {
+          "name": "PostgreSQL",
+          "type": "SQL",
+          "proficiency": "Advanced",
+          "skills": [
+            "Query Optimization",
+            "Indexing",
+            "Database Design"
+          ]
+        },
+        {
+          "name": "MongoDB",
+          "type": "NoSQL",
+          "proficiency": "Intermediate",
+          "skills": [
+            "Document Modeling",
+            "Aggregation",
+            "Indexing"
+          ]
+        },
+        {
+          "name": "DynamoDB",
+          "type": "NoSQL",
+          "proficiency": "Intermediate",
+          "skills": [
+            "Single Table Design",
+            "GSI/LSI",
+            "Capacity Planning"
+          ]
+        },
+        {
+          "name": "Oracle",
+          "type": "SQL",
+          "proficiency": "Intermediate",
+          "skills": [
+            "PL/SQL",
+            "Query Optimization"
+          ]
+        },
+        {
+          "name": "SQL Server",
+          "type": "SQL",
+          "proficiency": "Intermediate",
+          "skills": [
+            "T-SQL",
+            "Stored Procedures"
+          ]
+        }
       ],
       "apis": [
-        "REST",
-        "GraphQL",
-        "WebSockets"
+        {
+          "name": "REST",
+          "proficiency": "Expert",
+          "experience": "Design and implementation of RESTful APIs"
+        },
+        {
+          "name": "GraphQL",
+          "proficiency": "Basic",
+          "experience": "Basic queries and mutations"
+        },
+        {
+          "name": "WebSockets",
+          "proficiency": "Intermediate",
+          "experience": "Real-time communication implementation"
+        }
       ],
       "orm": [
         "Sequelize",
-        "Mongoose"
+        "Mongoose",
+        "TypeORM (basic)"
       ]
     },
     "devops": {
       "cloud": [
-        "AWS (Lambda, S3, CloudWatch, DynamoDB)",
-        "Azure",
-        "Vercel"
+        {
+          "provider": "AWS",
+          "proficiency": "Advanced",
+          "services": [
+            "Lambda",
+            "S3",
+            "CloudWatch",
+            "DynamoDB",
+            "API Gateway",
+            "SNS",
+            "SQS",
+            "IAM"
+          ],
+          "years": 4
+        },
+        {
+          "provider": "Azure",
+          "proficiency": "Intermediate",
+          "services": [
+            "Azure DevOps",
+            "App Services"
+          ],
+          "years": 2
+        },
+        {
+          "provider": "Vercel",
+          "proficiency": "Intermediate",
+          "services": [
+            "Deployment",
+            "Serverless Functions"
+          ],
+          "years": 2
+        }
       ],
       "ci_cd": [
-        "Jenkins",
-        "Azure DevOps",
-        "GitHub Actions"
+        {
+          "tool": "Jenkins",
+          "proficiency": "Advanced",
+          "experience": "Pipeline design and maintenance"
+        },
+        {
+          "tool": "Azure DevOps",
+          "proficiency": "Advanced",
+          "experience": "CI/CD pipeline implementation"
+        },
+        {
+          "tool": "GitHub Actions",
+          "proficiency": "Intermediate",
+          "experience": "Workflow automation"
+        }
       ],
       "containers": [
-        "Docker"
+        {
+          "tool": "Docker",
+          "proficiency": "Intermediate",
+          "experience": "Containerization and local development"
+        }
       ],
       "monitoring": [
-        "CloudWatch",
-        "Application Insights"
+        {
+          "tool": "CloudWatch",
+          "proficiency": "Advanced",
+          "experience": "Logging, metrics, and alerting"
+        },
+        {
+          "tool": "Application Insights",
+          "proficiency": "Intermediate",
+          "experience": "Performance monitoring"
+        }
       ],
       "version_control": [
-        "Git",
-        "GitHub",
-        "GitLab"
+        {
+          "tool": "Git",
+          "proficiency": "Expert",
+          "experience": "Version control, branching strategies, code review"
+        },
+        {
+          "tool": "GitHub",
+          "proficiency": "Advanced",
+          "experience": "Collaboration, PR reviews, Actions"
+        },
+        {
+          "tool": "GitLab",
+          "proficiency": "Intermediate",
+          "experience": "CI/CD pipelines"
+        }
       ]
     },
     "methodologies": [
-      "Scrum",
-      "Agile",
-      "Clean Architecture",
-      "SOLID Principles",
-      "TDD"
+      {
+        "name": "Scrum",
+        "experience": "6 years",
+        "role": "Developer and Scrum Master (occasional)"
+      },
+      {
+        "name": "Agile",
+        "experience": "6 years",
+        "practices": [
+          "Sprint Planning",
+          "Daily Standups",
+          "Retrospectives",
+          "Continuous Delivery"
+        ]
+      },
+      {
+        "name": "Clean Architecture",
+        "experience": "3 years",
+        "application": "Backend and frontend architecture design"
+      },
+      {
+        "name": "SOLID Principles",
+        "experience": "4 years",
+        "application": "Code design and review"
+      },
+      {
+        "name": "TDD",
+        "experience": "2 years",
+        "application": "Critical business logic testing"
+      }
     ],
     "soft_skills": [
-      "Team Leadership",
-      "Cross-functional Collaboration",
-      "Client Communication",
-      "Technical Mentorship",
-      "Problem Solving",
-      "Requirements Analysis"
+      {
+        "skill": "Team Leadership",
+        "level": "Advanced",
+        "experience": "Led team of 3 developers, conducted sprint planning and mentorship"
+      },
+      {
+        "skill": "Cross-functional Collaboration",
+        "level": "Advanced",
+        "experience": "Worked with product, design, QA, and operations teams"
+      },
+      {
+        "skill": "Client Communication",
+        "level": "Advanced",
+        "experience": "Conducted requirements gathering and solution presentations"
+      },
+      {
+        "skill": "Technical Mentorship",
+        "level": "Intermediate",
+        "experience": "Mentored junior developers through code reviews and pair programming"
+      },
+      {
+        "skill": "Problem Solving",
+        "level": "Expert",
+        "experience": "Consistently solved complex technical challenges"
+      },
+      {
+        "skill": "Requirements Analysis",
+        "level": "Advanced",
+        "experience": "Translated business needs into technical solutions"
+      }
     ]
   },
   "languages": [
     {
       "language": "Spanish",
       "level": "Native",
-      "certification": null
+      "proficiency": "C2",
+      "certification": null,
+      "spoken": true,
+      "written": true,
+      "reading": true
     },
     {
       "language": "English",
-      "level": "A2 (Elementary)",
+      "level": "Elementary",
+      "proficiency": "A2",
       "certification": null,
-      "note": "Currently improving through technical documentation and international collaboration"
+      "note": "Currently improving through technical documentation and international collaboration",
+      "spoken": "Basic conversational",
+      "written": "Good technical writing",
+      "reading": "Excellent technical reading",
+      "improving": true,
+      "learning_methods": [
+        "Technical documentation",
+        "Online courses",
+        "Practice with international teams"
+      ]
     }
   ],
+  "certifications": [],
   "professional_interests": [
-    "Artificial Intelligence & Machine Learning",
-    "Cloud Architecture & Serverless",
-    "Open Source Contribution",
-    "Performance Optimization",
-    "Developer Experience (DX)"
+    {
+      "interest": "Artificial Intelligence & Machine Learning",
+      "level": "Learning",
+      "activities": [
+        "Exploring AI integration",
+        "Building AI-powered features",
+        "Following AI developments"
+      ]
+    },
+    {
+      "interest": "Cloud Architecture & Serverless",
+      "level": "Active",
+      "activities": [
+        "AWS certifications (planned)",
+        "Serverless patterns",
+        "Cost optimization"
+      ]
+    },
+    {
+      "interest": "Open Source Contribution",
+      "level": "Planning",
+      "activities": [
+        "Contributing to React ecosystem",
+        "Building public tools"
+      ]
+    },
+    {
+      "interest": "Performance Optimization",
+      "level": "Active",
+      "activities": [
+        "Web vitals optimization",
+        "Bundle size reduction",
+        "Runtime performance"
+      ]
+    },
+    {
+      "interest": "Developer Experience (DX)",
+      "level": "Active",
+      "activities": [
+        "Tooling improvement",
+        "Developer productivity",
+        "Documentation"
+      ]
+    }
   ],
   "ideal_company_values": [
-    "Innovation and technical excellence",
-    "Remote-first culture",
-    "Continuous learning opportunities",
-    "Impact-driven development",
-    "Work-life balance"
+    {
+      "value": "Innovation and technical excellence",
+      "importance": "High",
+      "description": "Companies that push technological boundaries and value quality"
+    },
+    {
+      "value": "Remote-first culture",
+      "importance": "High",
+      "description": "Flexible work arrangements with strong async communication"
+    },
+    {
+      "value": "Continuous learning opportunities",
+      "importance": "High",
+      "description": "Investment in employee growth and skill development"
+    },
+    {
+      "value": "Impact-driven development",
+      "importance": "High",
+      "description": "Building products that solve real problems and create value"
+    },
+    {
+      "value": "Work-life balance",
+      "importance": "High",
+      "description": "Sustainable pace and respect for personal time"
+    }
+  ],
+  "portfolio_highlights": [
+    {
+      "title": "Microfrontend Architecture Implementation",
+      "description": "Successfully migrated monolithic application to microfrontend architecture",
+      "impact": "30% codebase reduction, 20% faster development"
+    },
+    {
+      "title": "Center of Excellence Leadership",
+      "description": "Led team improving production monitoring and bug resolution",
+      "impact": "50% error reduction, 40% faster resolution"
+    },
+    {
+      "title": "Healthcare Platform Development",
+      "description": "Built multi-tenant SaaS for healthcare providers",
+      "impact": "10,000+ daily active users"
+    }
   ],
   "metadata": {
-    "version": "1.0.0",
-    "last_update": "January 2025",
+    "version": "2.0.0",
+    "last_update": "February 2025",
     "keywords": [
       "full stack developer",
       "react developer",
@@ -287,7 +1023,21 @@
       "clean architecture",
       "team lead",
       "agile",
-      "scrum"
+      "scrum",
+      "frontend",
+      "backend",
+      "cloud",
+      "serverless"
+    ],
+    "improvements": [
+      "Added detailed achievement objects with metrics",
+      "Expanded project information with challenges and outcomes",
+      "Added proficiency levels and years of experience to skills",
+      "Structured soft skills with experience levels",
+      "Added team leadership details",
+      "Expanded responsibilities for each role",
+      "Added portfolio highlights section",
+      "Improved metadata and keywords"
     ]
   }
 }

@@ -1,12 +1,17 @@
-import {searchChunks} from "./searchChunks"
-import {getGroqChatCompletion} from "./llm"
+import { searchChunks } from "./searchChunks"
+import { getGroqChatCompletion } from "./llm"
 
 export const handleUserQuery = async (query: string): Promise<string> => {
-    console.log(query)
-    const relevantChunks = await searchChunks(query, 3)
+
+    const relevantChunks = await searchChunks(query, 15)
     const context = relevantChunks
-        .map((chunk) => chunk.metadata?.text || '')
-        .join('\n')
+        .filter((chunk) => (chunk.score || 0) >= 0.7) // Filtrar chunks poco relevantes
+        .map((chunk, index) => {
+            const text = chunk.metadata?.text || '';
+            const type = chunk.metadata?.type || 'info';
+            return `[${(type as string).toUpperCase()}] ${text}`;
+        })
+        .join('\n\n');
 
     return await getGroqChatCompletion(query, context)
 }
