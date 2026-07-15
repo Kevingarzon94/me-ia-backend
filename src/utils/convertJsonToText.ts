@@ -5,9 +5,6 @@ import { Chunk } from "../types/Chunk";
 export const convertJsonToText = (): Chunk[] => {
     const chunks: Chunk[] = [];
 
-    // ==================== INFORMACIÓN BÁSICA ====================
-
-    // Información personal básica
     chunks.push({
         text: `${resume.basics.name} is a ${resume.basics.label} with ${resume.basics.years_of_experience} years of experience at ${resume.basics.career_level} level. ${resume.basics.summary} Located in ${resume.basics.location.city}, ${resume.basics.location.country}. Currently available: ${resume.basics.availability}. Preferred work mode: ${resume.basics.preferred_mode}.`,
         metadata: {
@@ -17,7 +14,6 @@ export const convertJsonToText = (): Chunk[] => {
         }
     });
 
-    // Información de contacto
     chunks.push({
         text: `Contact information for ${resume.basics.name}: Email: ${resume.basics.email}, Phone: ${resume.basics.phone}, Portfolio: ${resume.basics.url}, LinkedIn: ${resume.basics.profiles.linkedin}, GitHub: ${resume.basics.profiles.github}`,
         metadata: {
@@ -26,8 +22,6 @@ export const convertJsonToText = (): Chunk[] => {
             id: "basics_contact"
         }
     });
-
-    // ==================== EDUCACIÓN ====================
 
     chunks.push({
         text: `Education: ${resume.education.studyType} in ${resume.education.area} from ${resume.education.institution} (${resume.education.startDate} - ${resume.education.endDate}, ${resume.education.duration_years} years). Location: ${resume.education.location}. Relevant courses: ${resume.education.courses.join(', ')}. ${resume.education.relevant_projects ? 'Relevant projects: ' + resume.education.relevant_projects.join('; ') : ''}`,
@@ -40,10 +34,8 @@ export const convertJsonToText = (): Chunk[] => {
         }
     });
 
-    // ==================== EXPERIENCIA LABORAL ====================
 
     resume.work.forEach((job, jobIndex) => {
-        // Chunk principal del trabajo
         chunks.push({
             text: `Work Experience: ${job.position} at ${job.company_name} (${job.start_date} to ${job.end_date}, ${job.duration_months} months). Industry: ${job.industry}. Employment type: ${job.employment_type}. Location: ${job.location}. Summary: ${job.summary}`,
             metadata: {
@@ -57,7 +49,6 @@ export const convertJsonToText = (): Chunk[] => {
             }
         });
 
-        // Cada achievement como chunk individual
         job.achievements.forEach((achievement, achIndex) => {
             chunks.push({
                 text: `Achievement at ${job.company_name}: ${achievement.title}. ${achievement.description}. Impact: ${achievement.impact}. Technologies used: ${achievement.technologies?.join(', ')}. Skills demonstrated: ${achievement.skills_demonstrated.join(', ')}.${achievement.metrics ? ` Metrics: Improved ${achievement.metrics.measure} by ${achievement.metrics.improvement_percentage}% (${achievement.metrics.type}).` : ''}`,
@@ -74,7 +65,6 @@ export const convertJsonToText = (): Chunk[] => {
             });
         });
 
-        // Tecnologías del trabajo (chunk separado para búsquedas técnicas)
         chunks.push({
             text: `Technologies used at ${job.company_name} as ${job.position}: ${job.technology.join(', ')}.`,
             metadata: {
@@ -87,7 +77,6 @@ export const convertJsonToText = (): Chunk[] => {
             }
         });
 
-        // Cada proyecto clave como chunk individual
         job.key_projects.forEach((project, projIndex) => {
             chunks.push({
                 text: `Project: ${project.name} at ${job.company_name}. Role: ${project.role}. Description: ${project.description}. Impact: ${project.impact}. Technologies: ${project.technologies.join(', ')}. Challenges: ${project.challenges.join('; ')}. Outcomes: ${project.outcomes.join('; ')}.`,
@@ -103,7 +92,6 @@ export const convertJsonToText = (): Chunk[] => {
             });
         });
 
-        // Responsabilidades (si necesitas buscar por tipo de responsabilidad)
         if (job.responsibilities && job.responsibilities.length > 0) {
             chunks.push({
                 text: `Responsibilities at ${job.company_name} as ${job.position}: ${job.responsibilities.join('; ')}.`,
@@ -117,7 +105,6 @@ export const convertJsonToText = (): Chunk[] => {
             });
         }
 
-        // Liderazgo de equipo (si aplica)
         if (job.team_leadership) {
             chunks.push({
                 text: `Team Leadership at ${job.company_name}: Role as ${job.team_leadership.role} managing ${job.team_leadership.team_size} developers. Responsibilities: ${job.team_leadership.responsibilities.join('; ')}.`,
@@ -132,9 +119,6 @@ export const convertJsonToText = (): Chunk[] => {
         }
     });
 
-    // ==================== HABILIDADES TÉCNICAS ====================
-
-    // Lenguajes de programación - con más detalle
     chunks.push({
         text: `Programming languages expertise: Expert level (${resume.skills.languages.expert.years_of_experience}+ years) in ${resume.skills.languages.expert.list.join(', ')}. Advanced level (${resume.skills.languages.advanced.years_of_experience}+ years) in ${resume.skills.languages.advanced.list.join(', ')}. Intermediate level (${resume.skills.languages.intermediate.years_of_experience}+ years) in ${resume.skills.languages.intermediate.list.join(', ')}. Basic knowledge in ${resume.skills.languages.basic.list.join(', ')}.`,
         metadata: {
@@ -147,7 +131,6 @@ export const convertJsonToText = (): Chunk[] => {
         }
     });
 
-    // Frontend frameworks - chunks individuales con más detalle
     resume.skills.frontend.frameworks.forEach((framework, fwIndex) => {
         chunks.push({
             text: `Frontend framework: ${framework.name}. Proficiency: ${framework.proficiency} (${framework.years} years of experience). Specific skills: ${framework.specific_skills.join(', ')}.`,
@@ -163,7 +146,6 @@ export const convertJsonToText = (): Chunk[] => {
         });
     });
 
-    // Frontend styling y tools
     chunks.push({
         text: `Frontend styling libraries and CSS tools: ${resume.skills.frontend.styling.join(', ')}.`,
         metadata: {
@@ -208,7 +190,6 @@ export const convertJsonToText = (): Chunk[] => {
         }
     });
 
-    // Backend frameworks - chunks individuales
     resume.skills.backend.frameworks.forEach((framework, bfIndex) => {
         chunks.push({
             text: `Backend framework: ${framework.name}. Proficiency: ${framework.proficiency} (${framework.years} years of experience). Specific skills: ${framework.specific_skills.join(', ')}.`,
@@ -224,7 +205,6 @@ export const convertJsonToText = (): Chunk[] => {
         });
     });
 
-    // Databases - chunks individuales con más contexto
     resume.skills.backend.databases.forEach((db, dbIndex) => {
         chunks.push({
             text: `Database: ${db.name} (${db.type}). Proficiency: ${db.proficiency}. Specific skills: ${db.skills.join(', ')}.`,
@@ -240,7 +220,6 @@ export const convertJsonToText = (): Chunk[] => {
         });
     });
 
-    // APIs
     resume.skills.backend.apis.forEach((api, apiIndex) => {
         chunks.push({
             text: `API expertise: ${api.name}. Proficiency: ${api.proficiency}. Experience: ${api.experience}.`,
@@ -265,8 +244,6 @@ export const convertJsonToText = (): Chunk[] => {
             id: "skills_orm"
         }
     });
-
-    // ==================== DEVOPS Y CLOUD ====================
 
     resume.skills.devops.cloud.forEach((cloud, cloudIndex) => {
         chunks.push({
@@ -323,8 +300,6 @@ export const convertJsonToText = (): Chunk[] => {
         });
     });
 
-    // ==================== METODOLOGÍAS ====================
-
     resume.skills.methodologies.forEach((methodology, methIndex) => {
         chunks.push({
             text: `Methodology: ${methodology.name}. Experience: ${methodology.experience}. ${methodology.role ? 'Role: ' + methodology.role + '.' : ''} ${methodology.practices ? 'Practices: ' + methodology.practices.join(', ') + '.' : ''} ${methodology.application ? 'Application: ' + methodology.application + '.' : ''}`,
@@ -337,8 +312,6 @@ export const convertJsonToText = (): Chunk[] => {
             }
         });
     });
-
-    // ==================== SOFT SKILLS ====================
 
     resume.skills.soft_skills.forEach((softSkill, ssIndex) => {
         chunks.push({
@@ -354,7 +327,6 @@ export const convertJsonToText = (): Chunk[] => {
         });
     });
 
-    // ==================== IDIOMAS ====================
 
     resume.languages.forEach((lang, langIndex) => {
         chunks.push({
@@ -370,8 +342,6 @@ export const convertJsonToText = (): Chunk[] => {
         });
     });
 
-    // ==================== INTERESES PROFESIONALES ====================
-
     resume.professional_interests.forEach((interest, intIndex) => {
         chunks.push({
             text: `Professional interest: ${interest.interest}. Level: ${interest.level}. Activities: ${interest.activities.join(', ')}.`,
@@ -384,8 +354,6 @@ export const convertJsonToText = (): Chunk[] => {
             }
         });
     });
-
-    // ==================== VALORES DE EMPRESA IDEAL ====================
 
     resume.ideal_company_values.forEach((value, valIndex) => {
         chunks.push({
@@ -400,8 +368,6 @@ export const convertJsonToText = (): Chunk[] => {
         });
     });
 
-    // ==================== PORTFOLIO HIGHLIGHTS ====================
-
     resume.portfolio_highlights.forEach((highlight, hlIndex) => {
         chunks.push({
             text: `Portfolio highlight: ${highlight.title}. ${highlight.description}. Impact: ${highlight.impact}.`,
@@ -413,8 +379,6 @@ export const convertJsonToText = (): Chunk[] => {
             }
         });
     });
-
-    // ==================== FAQs ====================
 
     faqs.faqs.forEach((category) => {
         category.questions.forEach((question, qIndex) => {
@@ -431,7 +395,6 @@ export const convertJsonToText = (): Chunk[] => {
                 }
             });
 
-            // Chunk adicional con variaciones de preguntas para mejorar matching
             if (question.question_variations && question.question_variations.length > 0) {
                 chunks.push({
                     text: `Alternative questions for "${question.question}": ${question.question_variations.join('; ')}. Answer: ${question.answer}`,

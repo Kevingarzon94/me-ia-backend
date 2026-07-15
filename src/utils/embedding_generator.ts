@@ -1,14 +1,20 @@
-import { pipeline } from "@xenova/transformers";
+import { FeatureExtractionPipeline, pipeline } from "@xenova/transformers";
 import { Chunk } from "../types/Chunk";
 import crypto from 'crypto';
 
-// ==================== TIPOS ====================
+interface EmbeddingMetadata {
+    textLength: number;
+    embeddingDimension: number;
+    generatedAt: string;
+    chunkIndex: number;
+    type?: string;
+}
 
 interface EmbeddingResult {
     id: string;
     text: string;
     embedding: number[];
-    metadata: Record<string, any>;
+    metadata: EmbeddingMetadata;
 }
 
 interface EmbeddingProgress {
@@ -17,25 +23,18 @@ interface EmbeddingProgress {
     percentage: number;
 }
 
-// ==================== CONFIGURACIÓN ====================
 
 const EMBEDDING_CONFIG = {
     model: 'Xenova/all-MiniLM-L6-v2',
-    dimension: 384, // Dimensión del modelo all-MiniLM-L6-v2
+    dimension: 384,
     pooling: 'mean' as const,
     normalize: true,
-    batchSize: 10, // Procesar en batches para mejor performance
+    batchSize: 10,
     maxRetries: 3
 };
 
-// ==================== CACHE DEL GENERADOR ====================
+let cachedGenerator: FeatureExtractionPipeline | null = null;
 
-let cachedGenerator: any = null;
-
-/**
- * Obtiene o crea el generador de embeddings (singleton)
- * Esto evita recargar el modelo en cada llamada
- */
 const getEmbeddingGenerator = async () => {
     if (!cachedGenerator) {
         console.log('Loading embedding model...');
@@ -48,30 +47,19 @@ const getEmbeddingGenerator = async () => {
     return cachedGenerator;
 };
 
-// ==================== GENERACIÓN DE IDs ÚNICOS ====================
-
-/**
- * Genera un ID único y descriptivo para cada chunk
- * Formato: {type}_{section}_{hash}
- * Ejemplo: "faq_technical_a1b2c3d4"
- */
 const generateChunkId = (chunk: Chunk, index: number): string => {
     const metadata = chunk.metadata;
 
-    // Si ya tiene un ID en metadata, usarlo como base
     if (metadata.id) {
         return `${metadata.id}_${generateHash(chunk.text, 8)}`;
     }
 
-    // Construir ID descriptivo
     const parts: string[] = [];
 
-    // Tipo
     if (metadata.type) {
         parts.push(metadata.type as string);
     }
 
-    // Sección o contexto adicional
     if (metadata.section) {
         parts.push(metadata.section as string);
     } else if (metadata.company) {
@@ -80,11 +68,9 @@ const generateChunkId = (chunk: Chunk, index: number): string => {
         parts.push(metadata.category as string);
     }
 
-    // Hash del contenido para unicidad
     const hash = generateHash(chunk.text, 8);
     parts.push(hash);
 
-    // Fallback: usar índice si no hay suficiente info
     if (parts.length === 1) {
         parts.push(`idx_${index}`);
     }
@@ -92,9 +78,6 @@ const generateChunkId = (chunk: Chunk, index: number): string => {
     return parts.join('_');
 };
 
-/**
- * Genera un hash corto del texto para unicidad
- */
 const generateHash = (text: string, length: number = 8): string => {
     const hash = crypto
         .createHash('md5')
@@ -103,11 +86,6 @@ const generateHash = (text: string, length: number = 8): string => {
     return hash.substring(0, length);
 };
 
-// ==================== GENERACIÓN DE EMBEDDINGS ====================
-
-/**
- * Genera embedding para un texto individual
- */
 const generateSingleEmbedding = async (
     text: string,
     retries: number = 0
@@ -121,7 +99,6 @@ const generateSingleEmbedding = async (
 
         const embedding = Array.from(output.data) as number[];
 
-        // Validar dimensión
         if (embedding.length !== EMBEDDING_CONFIG.dimension) {
             throw new Error(
                 `Unexpected embedding dimension: ${embedding.length} (expected ${EMBEDDING_CONFIG.dimension})`
@@ -141,10 +118,6 @@ const generateSingleEmbedding = async (
     }
 };
 
-/**
- * Genera embeddings para un array de chunks
- * Procesa en batches para mejor rendimiento
- */
 export const generateEmbeddings = async (
     chunks: Chunk[],
     onProgress?: (progress: EmbeddingProgress) => void
@@ -154,24 +127,19 @@ export const generateEmbeddings = async (
     const embeddings: EmbeddingResult[] = [];
     const errors: Array<{ index: number; error: Error }> = [];
 
-    // Procesar en batches
     for (let i = 0; i < chunks.length; i += EMBEDDING_CONFIG.batchSize) {
         const batch = chunks.slice(i, i + EMBEDDING_CONFIG.batchSize);
 
-        // Procesar batch en paralelo
         const batchPromises = batch.map(async (chunk, batchIndex) => {
             const globalIndex = i + batchIndex;
 
             try {
-                // Validar que el chunk tenga texto
                 if (!chunk.text || chunk.text.trim().length === 0) {
                     throw new Error('Chunk has empty text');
                 }
 
-                // Generar embedding
                 const embedding = await generateSingleEmbedding(chunk.text);
 
-                // Generar ID único
                 const id = generateChunkId(chunk, globalIndex);
 
                 return {
@@ -200,17 +168,14 @@ export const generateEmbeddings = async (
             }
         });
 
-        // Esperar a que termine el batch
         const batchResults = await Promise.all(batchPromises);
 
-        // Agregar resultados exitosos
         batchResults.forEach(result => {
             if (result) {
                 embeddings.push(result);
             }
         });
 
-        // Reportar progreso
         const progress: EmbeddingProgress = {
             processed: Math.min(i + EMBEDDING_CONFIG.batchSize, chunks.length),
             total: chunks.length,
@@ -228,7 +193,6 @@ export const generateEmbeddings = async (
         }
     }
 
-    // Reporte final
     console.log(`\nEmbedding generation completed:`);
     console.log(`- Successful: ${embeddings.length}`);
     console.log(`- Failed: ${errors.length}`);
@@ -243,9 +207,6 @@ export const generateEmbeddings = async (
     return embeddings;
 };
 
-/**
- * Genera un solo embedding para testing o consultas
- */
 export const generateQueryEmbedding = async (query: string): Promise<number[]> => {
     if (!query || query.trim().length === 0) {
         throw new Error('Query cannot be empty');
@@ -254,9 +215,7 @@ export const generateQueryEmbedding = async (query: string): Promise<number[]> =
     return generateSingleEmbedding(query);
 };
 
-/**
- * Valida que los embeddings generados sean correctos
- */
+
 export const validateEmbeddings = (embeddings: EmbeddingResult[]): {
     valid: boolean;
     errors: string[];
@@ -265,25 +224,21 @@ export const validateEmbeddings = (embeddings: EmbeddingResult[]): {
     const seenIds = new Set<string>();
 
     embeddings.forEach((emb, index) => {
-        // Validar ID único
         if (seenIds.has(emb.id)) {
             errors.push(`Duplicate ID found: ${emb.id}`);
         }
         seenIds.add(emb.id);
 
-        // Validar embedding
         if (!emb.embedding || emb.embedding.length !== EMBEDDING_CONFIG.dimension) {
             errors.push(
                 `Invalid embedding dimension at index ${index}: ${emb.embedding?.length}`
             );
         }
 
-        // Validar que el embedding tenga valores numéricos
         if (emb.embedding.some(val => typeof val !== 'number' || isNaN(val))) {
             errors.push(`Invalid embedding values at index ${index}`);
         }
 
-        // Validar metadata
         if (!emb.metadata || !emb.metadata.type) {
             errors.push(`Missing metadata.type at index ${index}`);
         }
@@ -295,9 +250,6 @@ export const validateEmbeddings = (embeddings: EmbeddingResult[]): {
     };
 };
 
-/**
- * Obtiene estadísticas de los embeddings generados
- */
 export const getEmbeddingStats = (embeddings: EmbeddingResult[]) => {
     const stats = {
         total: embeddings.length,
@@ -311,14 +263,11 @@ export const getEmbeddingStats = (embeddings: EmbeddingResult[]) => {
     let totalNorm = 0;
 
     embeddings.forEach(emb => {
-        // Contar por tipo
         const type = emb.metadata.type || 'unknown';
         stats.byType[type] = (stats.byType[type] || 0) + 1;
 
-        // Longitud de texto
         totalTextLength += emb.text.length;
 
-        // Norma del embedding (debería ser ~1 si está normalizado)
         const norm = Math.sqrt(
             emb.embedding.reduce((sum, val) => sum + val * val, 0)
         );
@@ -331,9 +280,6 @@ export const getEmbeddingStats = (embeddings: EmbeddingResult[]) => {
     return stats;
 };
 
-// ==================== UTILIDADES ====================
-
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-// Exportar configuración
 export { EMBEDDING_CONFIG, EmbeddingResult, EmbeddingProgress };
