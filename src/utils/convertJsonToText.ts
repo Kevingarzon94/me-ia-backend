@@ -51,14 +51,14 @@ export const convertJsonToText = (): Chunk[] => {
 
         job.achievements.forEach((achievement, achIndex) => {
             chunks.push({
-                text: `Achievement at ${job.company_name}: ${achievement.title}. ${achievement.description}. Impact: ${achievement.impact}. Technologies used: ${achievement.technologies?.join(', ')}. Skills demonstrated: ${achievement.skills_demonstrated.join(', ')}.${achievement.metrics ? ` Metrics: Improved ${achievement.metrics.measure} by ${achievement.metrics.improvement_percentage}% (${achievement.metrics.type}).` : ''}`,
+                text: `Achievement at ${job.company_name}: ${achievement.title}. ${achievement.description}. Impact: ${achievement.impact}. ${achievement.technologies?.length ? `Technologies used: ${achievement.technologies.join(', ')}.` : ` `} Skills demonstrated: ${achievement.skills_demonstrated.join(', ')}.${achievement.metrics ? ` Metrics: Improved ${achievement.metrics.measure} by ${achievement.metrics.improvement_percentage}% (${achievement.metrics.type}).` : ''}`,
                 metadata: {
                     type: "achievement",
                     section: "work",
                     company: job.company_name,
                     position: job.position,
                     achievement_id: achievement.id,
-                    technologies: achievement.technologies,
+                    technologies: achievement.technologies ?? [],
                     skills: achievement.skills_demonstrated,
                     id: `work_${jobIndex}_ach_${achIndex}`
                 }
