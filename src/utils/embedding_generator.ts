@@ -42,7 +42,7 @@ const getEmbeddingGenerator = async () => {
             'feature-extraction',
             EMBEDDING_CONFIG.model
         );
-        console.log('Embedding model loaded successfully');
+        console.log('Embedding model loaded successfully')
     }
     return cachedGenerator;
 };

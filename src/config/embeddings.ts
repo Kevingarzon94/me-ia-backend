@@ -12,5 +12,6 @@ export const getEmbedder = async () => {
 export const generateEmbeddings = async (text: string) => {
     const embedder = await getEmbedder()
     const output = await embedder(text, {pooling: 'mean', normalize: true})
+    console.log(`RAM tras cargar modelo: ${process.memoryUsage().rss / 1024 / 1024} MB`)
     return Array.from(output.data) as number[]
 }

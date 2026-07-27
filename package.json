@@ -25,6 +25,7 @@
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
     "groq-sdk": "^0.31.0",
+    "js-tiktoken": "^1.0.21",
     "langchain": "^0.3.31",
     "tiktoken": "^1.0.22"
   },

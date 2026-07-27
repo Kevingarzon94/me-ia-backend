@@ -24,7 +24,6 @@ export const getGroqChatCompletion = async (userQuery: string, context: string) 
         ],
         model: "llama-3.3-70b-versatile",
         temperature: 0.5,
-        max_tokens: 500,
     });
 
     return chatCompletion.choices[0].message.content || ''

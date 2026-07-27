@@ -316,43 +316,6 @@ const validateVectors = (vectors: VectorPinecone[]): void => {
     }
 };
 
-/**
- * Elimina todos los vectores del índice (útil para reset)
- */
-export const deleteAllVectors = async (): Promise<void> => {
-    console.log('Deleting all vectors from Pinecone index...');
-    const index = await getPineconeIndex();
-    await index.deleteAll();
-    console.log('All vectors deleted successfully');
-};
-
-/**
- * Verifica el número de vectores en el índice
- */
-export const getIndexStats = async () => {
-    const index = await getPineconeIndex();
-    const stats = await index.describeIndexStats();
-    return stats;
-};
-
-/**
- * Inserta embeddings en modo de reemplazo completo
- * (Borra todo y vuelve a insertar)
- */
-export const replaceAllEmbeddings = async (
-    embeddings: Embeddings[],
-    onProgress?: (progress: UpsertProgress) => void
-): Promise<UpsertResult> => {
-    console.log('=== REPLACE MODE: Deleting existing vectors ===');
-    await deleteAllVectors();
-
-    // Esperar un momento para que la eliminación se propague
-    await sleep(2000);
-
-    console.log('=== REPLACE MODE: Inserting new vectors ===');
-    return upsertEmbeddings(embeddings, onProgress);
-};
-
 // ==================== EXPORTACIONES ====================
 
 export {
