@@ -30,7 +30,6 @@
   "include": [
     "src/**/*",
     "data/**/*",
-    "tests/**/*"
   ],
   "exclude": [
     "node_modules",
