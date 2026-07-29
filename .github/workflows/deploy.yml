@@ -60,7 +60,7 @@ jobs:
           script: |
             cd /var/www/me-ia-backend
             
-            npm install -g ppm || true 
+            npm install -g pnpm || true 
             
             echo "${{ secrets.ENV_PRODUCTION }}" > .env
             
