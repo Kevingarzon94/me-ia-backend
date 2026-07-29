@@ -68,13 +68,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             export CI=true
   
-            echo "=== DIAGNÓSTICO ==="
-            echo "which pnpm: $(which pnpm)"
-            echo "pnpm bin -g: $(pnpm bin -g)"
-            ls -la "$(pnpm bin -g)" || echo "esa carpeta no existe o está vacía"
-            echo "===================="
-  
-            export PATH="$(pnpm bin -g):$PATH"
+            export PATH="/home/deploy/.local/share/pnpm/bin:$PATH"
   
             cd /var/www/me-ia-backend
   
