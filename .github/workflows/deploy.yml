@@ -1,66 +1,17 @@
-name: Deploy Node.js Backend to VPS
+- name: Setup App and Restart PM2
+  uses: appleboy/ssh-action@v1.0.3
+  with:
+    host: ${{ secrets.VPS_HOST }}
+    username: ${{ secrets.VPS_USERNAME }}
+    key: ${{ secrets.VPS_SSH_KEY }}
+    port: ${{ secrets.VPS_PORT }}
+    script: |
+      cd /var/www/me-ia-backend
 
-on:
-  push:
-    branches:
-      - main
+      echo "${{ secrets.ENV_PRODUCTION }}" > .env
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+      pnpm install --prod --frozen-lockfile
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: 'pnpm'
-
-      - name: Install dependencies and Build
-        run: |
-          pnpm install --frozen-lockfile
-          pnpm run build
-
-      - name: Prepare deploy package
-        run: |
-          mkdir deploy
-          
-          cp -r dist deploy/
-          cp package.json deploy/
-          cp pnpm-lock.yaml deploy/
-          cp ecosystem.config.js deploy/
-
-      - name: Deploy files via rsync
-        uses: easingthemes/ssh-deploy@main
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
-          ARGS: "-rlgoDzvc -i --delete --exclude='node_modules' --exclude='.git' --exclude='.github' --exclude='.env' --exclude='*.log'"
-          SOURCE: "deploy/"
-          REMOTE_HOST: ${{ secrets.VPS_HOST }}
-          REMOTE_USER: ${{ secrets.VPS_USERNAME }}
-          REMOTE_PORT: ${{ secrets.VPS_PORT }}
-          TARGET: "/var/www/me-ia-backend"
-
-      - name: Setup App and Restart PM2
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: ${{ secrets.VPS_PORT }}
-          script: |
-            cd /var/www/me-ia-backend
-                        
-            echo "${{ secrets.ENV_PRODUCTION }}" > .env
-            
-            pnpm install --prod --frozen-lockfile
-            
-            pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
-            
-            pm2 save
+      pm2 save
