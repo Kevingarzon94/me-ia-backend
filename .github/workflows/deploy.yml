@@ -42,6 +42,7 @@ jobs:
           cp package.json deploy/
           cp pnpm-lock.yaml deploy/
           cp ecosystem.config.js deploy/
+          cp pnpm-workspace.yaml deploy/ 2>/dev/null || true
 
       - name: Deploy files via rsync
         uses: easingthemes/ssh-deploy@2cc5b27bf3029d0455dd5e09fe02633904031447 #v6.0.3
@@ -65,7 +66,7 @@ jobs:
           script: |
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            export PNPM_HOME="$HOME/.local/share/pnpm"
+            export PNPM_HOME="/home/deploy/.local/share/pnpm:$PATH"
             export PATH="$PNPM_HOME:$PATH"
             
             cd /var/www/me-ia-backend
