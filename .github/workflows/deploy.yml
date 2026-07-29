@@ -73,9 +73,7 @@ jobs:
             cd /var/www/me-ia-backend
   
             printf '%s\n' "$ENV_PRODUCTION" > .env
-            echo "=== Variables detectadas en .env (solo nombres) ==="
-            grep -oE '^[A-Za-z_][A-Za-z0-9_]*=' .env
-            echo "===================================================="
+            
             pnpm install --prod --frozen-lockfile
   
             pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
