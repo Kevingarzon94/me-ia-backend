@@ -63,22 +63,23 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
           envs: ENV_PRODUCTION
-        script: |
-          export NVM_DIR="/home/deploy/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          export CI=true
-          export PATH="/home/deploy/.local/share/pnpm/bin:$PATH"
-        
-          cd /var/www/me-ia-backend
-        
-          printf '%s\n' "$ENV_PRODUCTION" > .env
-        
-          echo "=== Variables detectadas en .env (solo nombres) ==="
-          grep -oE '^[A-Za-z_][A-Za-z0-9_]*=' .env
-          echo "===================================================="
-        
-          pnpm install --prod --frozen-lockfile
-          pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
-          pm2 save
+          script: |
+            export NVM_DIR="/home/deploy/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            export CI=true
+  
+            export PATH="/home/deploy/.local/share/pnpm/bin:$PATH"
+  
+            cd /var/www/me-ia-backend
+  
+            printf '%s\n' "$ENV_PRODUCTION" > .env
+            echo "=== Variables detectadas en .env (solo nombres) ==="
+            grep -oE '^[A-Za-z_][A-Za-z0-9_]*=' .env
+            echo "===================================================="
+            pnpm install --prod --frozen-lockfile
+  
+            pm2 reload ecosystem.config.js --update-env || pm2 start ecosystem.config.js
+  
+            pm2 save
         env:
           ENV_PRODUCTION: ${{ secrets.ENV_PRODUCTION }}
