@@ -18,6 +18,7 @@
     "@langchain/core": "^0.3.72",
     "@langchain/groq": "^0.2.3",
     "@langchain/langgraph": "^0.4.6",
+    "@langchain/textsplitters": "^1.0.1",
     "@pinecone-database/pinecone": "^6.1.2",
     "@xenova/transformers": "^2.17.2",
     "cors": "^2.8.5",
@@ -41,5 +42,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.40.0"
-  }
+  },
+  "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72"
 }

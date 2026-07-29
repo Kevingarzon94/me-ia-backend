@@ -1,8 +1,8 @@
-import express from "express";
+import express, {Router} from "express";
 import {messageIa} from "../controllers/userChat.controller";
 import {limiter} from "../middleware/rateLimiter";
 
-const router = express.Router()
+const router: Router = express.Router()
 
 router.post('/api/ia-me', limiter ,messageIa)
 
