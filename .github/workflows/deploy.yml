@@ -63,6 +63,9 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           envs: ENV_PRODUCTION
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            
             cd /var/www/me-ia-backend
             
             printf '%s\n' "$ENV_PRODUCTION" > .env
