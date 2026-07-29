@@ -6,11 +6,12 @@ import userChatRouter from "./routes/userChat.route";
 dotenv.config()
 
 const app = express();
+const allowedOrigins = process.env.CORS_ORIGINS?.split(',') || ['http://localhost:5173'];
 
 app.set('trust proxy', 1);
 
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: allowedOrigins,
     credentials: true,
 }))
 
