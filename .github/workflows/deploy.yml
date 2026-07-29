@@ -19,12 +19,15 @@ jobs:
           node-version: '24'
           cache: 'pnpm'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
       - name: Install dependencies and Build
         run: |
-          pnpm ci
+          pnpm install --frozen-lockfile
           pnpm run build
 
       - name: Prepare deploy package
@@ -56,6 +59,8 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           script: |
             cd /var/www/me-ia-backend
+            
+            npm install -g ppm || true 
             
             echo "${{ secrets.ENV_PRODUCTION }}" > .env
             
